@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8160991028808931487}
   - component: {fileID: 8779870012905124852}
   - component: {fileID: 3457854819373301906}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hero_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.836, y: 0.877, z: 1}
+  m_LocalScale: {x: -1, y: 0.877, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8312858998084378332}
@@ -206,7 +206,8 @@ GameObject:
   - component: {fileID: 8312858998084378332}
   - component: {fileID: 6771387396094166512}
   - component: {fileID: 5093122383231212965}
-  m_Layer: 0
+  - component: {fileID: 7844247936877274445}
+  m_Layer: 6
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -290,3 +291,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &7844247936877274445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6031957450648155073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9265bf8fad0c3e4089778924df27f43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

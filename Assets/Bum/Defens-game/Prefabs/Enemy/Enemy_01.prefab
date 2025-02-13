@@ -14,13 +14,13 @@ GameObject:
   - component: {fileID: -1964663925063494306}
   - component: {fileID: -1066954429123255983}
   - component: {fileID: 8406677135391276654}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy_01
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6319055306656766083
 Transform:
   m_ObjectHideFlags: 0
@@ -207,7 +207,7 @@ GameObject:
   - component: {fileID: 7890255033597258604}
   - component: {fileID: 5021700690109617748}
   - component: {fileID: 8733707664503721624}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Weapon
   m_TagString: EnemyWeapon
   m_Icon: {fileID: 0}

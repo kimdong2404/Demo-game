@@ -29,8 +29,9 @@ namespace Bum.Demogame
         // Update is called once per frame
         void Update()
         {
-            if (m_player == null||m_rb == null) return;
-            if (Vector2.Distance(m_player.transform.position, transform.position)<=atkDistance)
+            if (Iscomponentsnull()) return;
+            float DistToPlayer = Vector2.Distance(m_player.transform.position, transform.position);
+            if (DistToPlayer <= atkDistance)
             {
                 m_anim.SetBool(Const.ATTACK_ANIM, true);
                 m_rb.velocity = Vector2.zero;
@@ -41,5 +42,13 @@ namespace Bum.Demogame
             }
 
         }
+        public void Die()
+        {
+            if (Iscomponentsnull()) return;
+            m_anim.SetTrigger(Const.DEAD_ANIM);
+            m_rb.velocity = Vector2.zero;
+            gameObject.layer = LayerMask.NameToLayer(Const.DEAD_ANIM);
+        }
+
     }
 }
