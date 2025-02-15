@@ -11,11 +11,12 @@ GameObject:
   - component: {fileID: 2116900628057329812}
   - component: {fileID: 5282814373449194369}
   - component: {fileID: 5139533080850320981}
+  - component: {fileID: 1522534459911387332}
   - component: {fileID: 8559080393873370778}
   - component: {fileID: 3094100345612613224}
   m_Layer: 0
   m_Name: Hero_01
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8373631229136134171}
@@ -109,6 +110,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1522534459911387332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3126979857458537366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e392f56f7ebf6e44bf88247c2659ff7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  atkRate: 4
 --- !u!50 &8559080393873370778
 Rigidbody2D:
   serializedVersion: 4
@@ -168,7 +182,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.026812375, y: -0.8579966}
+  m_Offset: {x: 0.044463158, y: -0.8579966}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -179,7 +193,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1852635, y: 1.9896355}
+  m_Size: {x: 1.0427127, y: 1.9896355}
   m_EdgeRadius: 0
 --- !u!1 &5882589051285397155
 GameObject:
@@ -190,6 +204,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8373631229136134171}
+  - component: {fileID: 5476879057596057374}
   - component: {fileID: 293254796717362504}
   - component: {fileID: 5729896944704772410}
   m_Layer: 0
@@ -214,6 +229,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2116900628057329812}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5476879057596057374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5882589051285397155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9265bf8fad0c3e4089778924df27f43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!58 &293254796717362504
 CircleCollider2D:
   m_ObjectHideFlags: 0

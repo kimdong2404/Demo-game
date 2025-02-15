@@ -10,7 +10,7 @@ namespace Bum.Demogame
         {
             if (col.CompareTag(Const.ENEMY_TAG))
             {
-                Enemy enemy = col.GetComponent<Enemy>();
+                Enemy enemy=col.GetComponent<Enemy>();
                 if (enemy)
                     enemy.Die();
             }
