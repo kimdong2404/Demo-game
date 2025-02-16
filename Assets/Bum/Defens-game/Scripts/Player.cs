@@ -60,6 +60,7 @@ namespace Bum.Demogame
             {
                 m_anim.SetTrigger(Const.DEAD_ANIM);
                 m_IsDead = true;
+                gameObject.layer=LayerMask.NameToLayer(Const.DEAD_LAYER);
             }
         }
     }

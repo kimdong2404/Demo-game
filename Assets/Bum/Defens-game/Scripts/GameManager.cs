@@ -8,6 +8,11 @@ namespace Bum.Demogame
         public float spawnTime;
         public Enemy[] enemyPrefabs;
         public bool m_IsGameover;
+        private int m_score;
+
+        public int Score { get => m_score; set => m_score = value; }
+       
+
         // Start is called before the first frame update
         void Start()
         {
@@ -30,7 +35,7 @@ namespace Bum.Demogame
                
                         if (enemyPrefab)
                         {
-                            Instantiate(enemyPrefab, new Vector3(8,-3,0), Quaternion.identity);
+                            Instantiate(enemyPrefab, new Vector3(8,0,0), Quaternion.identity);
                         }
                 }
                     yield return new WaitForSeconds(spawnTime);

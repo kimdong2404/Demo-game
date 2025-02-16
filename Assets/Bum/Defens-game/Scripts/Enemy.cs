@@ -11,11 +11,16 @@ namespace Bum.Demogame
         private Player m_player;
         public float speed;
         public float atkDistance;
-        private void Awake()
+        private bool m_IsDead;
+
+        private GameManager m_gm;
+             private void Awake()
         {
             m_anim = GetComponent<Animator>();
             m_rb = GetComponent<Rigidbody2D>();
             m_player=FindObjectOfType<Player>();
+            m_gm =FindObjectOfType<GameManager>();
+
         }
         // Start is called before the first frame update
         void Start()
@@ -44,10 +49,17 @@ namespace Bum.Demogame
         }
         public void Die()
         {
-            if (Iscomponentsnull()) return;
-            m_anim.SetTrigger(Const.DEAD_ANIM);
+            if (Iscomponentsnull()|| m_IsDead) return;
+            m_IsDead = true;
+            m_anim.SetTrigger(Const.DEAD_ANIM); 
             m_rb.velocity = Vector2.zero;
             gameObject.layer = LayerMask.NameToLayer(Const.DEAD_ANIM);
+            if (m_gm)
+                m_gm.Score++;
+
+            Destroy(gameObject,2f);
+            
+           
         }
 
     }
