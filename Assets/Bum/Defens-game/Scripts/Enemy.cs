@@ -58,7 +58,7 @@ namespace Bum.Demogame
                 gameObject.layer = LayerMask.NameToLayer(Const.DEAD_ANIM);
                 m_gm.Score++;
                 int CoinBonus = Random.Range(minCoinBonus, maxCoinBonus);
-                Debug.Log(CoinBonus);
+            
                 Pref.coins += CoinBonus;
 
                 Destroy(gameObject,2f); 
