@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace Bum.Demogame
 {
-    public class GameManager : MonoBehaviour
+    public class GameManager : MonoBehaviour, icomponentchecking
     {
         public float spawnTime;
         public Enemy[] enemyPrefabs;
+        public GuiManager guiMng;
         public bool m_IsGameover;
         private int m_score;
 
@@ -16,10 +17,29 @@ namespace Bum.Demogame
         // Start is called before the first frame update
         void Start()
         {
+            
+            if (Iscomponentsnull()) return;
+
+            guiMng.ShowGameGUI(false);
+            guiMng.UpdateMainCoins();
+
+        }
+        public void PlayGame()
+        {
             StartCoroutine(SpawnEnemy());
+            guiMng.ShowGameGUI(true);
+            guiMng.UpdateGameplayCoins();
+
         }
 
-        // Update is called once per frame
+        
+        public bool Iscomponentsnull()
+        {
+            return guiMng == null;
+        }
+
+
+
         void Update()
         {
 

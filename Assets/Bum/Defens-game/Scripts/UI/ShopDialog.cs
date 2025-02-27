@@ -2,17 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShoDialog : MonoBehaviour
+namespace Bum.Demogame
 {
-    // Start is called before the first frame update
-    void Start()
+    public class ShopDialog : Dialog
     {
-        
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

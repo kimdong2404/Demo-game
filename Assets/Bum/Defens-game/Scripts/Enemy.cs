@@ -59,8 +59,10 @@ namespace Bum.Demogame
                 m_gm.Score++;
                 int CoinBonus = Random.Range(minCoinBonus, maxCoinBonus);
             
-                Pref.coins += CoinBonus;
-
+                Pref.coins += CoinBonus;    
+                if(m_gm.guiMng)
+                    m_gm.guiMng.UpdateGameplayCoins();
+                
                 Destroy(gameObject,2f); 
             
            
