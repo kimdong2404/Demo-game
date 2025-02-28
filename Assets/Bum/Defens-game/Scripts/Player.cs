@@ -11,10 +11,12 @@ namespace Bum.Demogame
         private float m_curAtkRate;
         private bool m_IsAttacked;
         private bool m_IsDead;
+        private GameManager m_gm;
         private void Awake()
         {
             m_anim = GetComponent<Animator>();
             m_curAtkRate = atkRate;
+            m_gm=FindObjectOfType<GameManager>();
         }
         // Start is called before the first frame update
         void Start()
@@ -24,7 +26,7 @@ namespace Bum.Demogame
 
         public bool Iscomponentsnull()
         {
-            return m_anim == null;
+            return m_anim == null || m_gm == null ;
         }
 
         // Update is called once per frame
@@ -61,6 +63,7 @@ namespace Bum.Demogame
                 m_anim.SetTrigger(Const.DEAD_ANIM);
                 m_IsDead = true;
                 gameObject.layer=LayerMask.NameToLayer(Const.DEAD_LAYER);
+                m_gm.Gameover(); //hero chet thi gameover
             }
         }
     }

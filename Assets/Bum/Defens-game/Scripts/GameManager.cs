@@ -19,7 +19,6 @@ namespace Bum.Demogame
         {
             
             if (Iscomponentsnull()) return;
-
             guiMng.ShowGameGUI(false);
             guiMng.UpdateMainCoins();
 
@@ -38,7 +37,14 @@ namespace Bum.Demogame
             return guiMng == null;
         }
 
-
+        public void Gameover() //khi game ket thuc thi khong thuc hien cau lenh ben duoi nua
+        {
+            if(m_IsGameover) return;
+            m_IsGameover = true;
+            Pref.bestScore= m_score;
+            if(guiMng.gameoverDialog)
+                guiMng.gameoverDialog.Show(true);
+        }
 
         void Update()
         {
