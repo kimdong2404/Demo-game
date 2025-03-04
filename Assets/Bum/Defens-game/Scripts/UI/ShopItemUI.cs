@@ -24,11 +24,11 @@ namespace Bum.Demogame
                 if (Pref.curPlayerId == itemIdx)
                 {
                     if (pricetxt)
-                        pricetxt.text = "Acive";
+                        pricetxt.text = "Acive";//đã mua và đang sử dụng thì chuyển sang chữ này
                 }
                 else if(pricetxt)
                 {
-                    pricetxt.text = "Owned";
+                    pricetxt.text = "Owned";//đã mua và đang không sử dụng thì chuyển sang chữ này
                 }
             }
             else

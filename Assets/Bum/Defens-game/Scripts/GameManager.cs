@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 namespace Bum.Demogame
@@ -8,8 +8,10 @@ namespace Bum.Demogame
         public float spawnTime;
         public Enemy[] enemyPrefabs;
         public GuiManager guiMng;
+        public ShopManager shopMng;
         public bool m_IsGameover;
         private int m_score;
+        private Player m_curPlayer;
 
         public int Score { get => m_score; set => m_score = value; }
        
@@ -23,19 +25,32 @@ namespace Bum.Demogame
             guiMng.UpdateMainCoins();
 
         }
+        public bool Iscomponentsnull()
+        {
+            return guiMng == null||shopMng==null;
+        }
         public void PlayGame()
         {
+            ActivePlayer();
             StartCoroutine(SpawnEnemy());
             guiMng.ShowGameGUI(true);
             guiMng.UpdateGameplayCoins();
 
         }
+        public void ActivePlayer()
+        {
+            if (Iscomponentsnull()) return;
+            if(m_curPlayer)
+                Destroy(m_curPlayer.gameObject);
+            var shopItems = shopMng.items;
+            if(shopItems==null|| shopItems.Length<=0) return;
+            var newPlayerPb=shopItems[Pref.curPlayerId].playerPrefab;
+            if(newPlayerPb)
+                m_curPlayer=Instantiate(newPlayerPb, new Vector3(-7f,-1f,0f),Quaternion.identity);//lấy ra hero vừa mua
+        }
 
         
-        public bool Iscomponentsnull()
-        {
-            return guiMng == null;
-        }
+
 
         public void Gameover() //khi game ket thuc thi khong thuc hien cau lenh ben duoi nua
         {
