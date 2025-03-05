@@ -9,6 +9,7 @@ namespace Bum.Demogame
         public Enemy[] enemyPrefabs;
         public GuiManager guiMng;
         public ShopManager shopMng;
+        public AudioController auCtr;
         public bool m_IsGameover;
         private int m_score;
         private Player m_curPlayer;
@@ -27,14 +28,16 @@ namespace Bum.Demogame
         }
         public bool Iscomponentsnull()
         {
-            return guiMng == null||shopMng==null;
+            return guiMng == null||shopMng==null||auCtr==null;
         }
         public void PlayGame()
         {
+            if(Iscomponentsnull()) return;
             ActivePlayer();
             StartCoroutine(SpawnEnemy());
             guiMng.ShowGameGUI(true);
             guiMng.UpdateGameplayCoins();
+            auCtr.PlayBgm();
 
         }
         public void ActivePlayer()
@@ -59,6 +62,7 @@ namespace Bum.Demogame
             Pref.bestScore= m_score;
             if(guiMng.gameoverDialog)
                 guiMng.gameoverDialog.Show(true);
+            auCtr.PlaySound(auCtr.gameover);
         }
 
         void Update()

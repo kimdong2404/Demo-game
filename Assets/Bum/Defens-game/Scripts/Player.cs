@@ -19,10 +19,6 @@ namespace Bum.Demogame
             m_gm=FindObjectOfType<GameManager>();
         }
         // Start is called before the first frame update
-        void Start()
-        {
-
-        }
 
         public bool Iscomponentsnull()
         {
@@ -52,6 +48,11 @@ namespace Bum.Demogame
         {
             if (Iscomponentsnull()) return;
             m_anim.SetBool(Const.ATTACK_ANIM, false);
+        }
+        public void PlayAtkSound()
+        {
+            if (m_gm.auCtr)
+                m_gm.auCtr.PlaySound(m_gm.auCtr.playerAtk);
         }
 
         private void OnTriggerEnter2D(Collider2D col)
